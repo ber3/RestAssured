@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pet {
-    public int id;
+    public Long id;
     public Category category;
     public String name;
     public List<String> photoUrls;
     public List<Tag> tags;
     public String status;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

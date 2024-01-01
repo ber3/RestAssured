@@ -1,14 +1,14 @@
 package pl.bamnwa.objects.pet;
 
 public class Tag {
-    public int id;
+    public Long id;
     public String name;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
