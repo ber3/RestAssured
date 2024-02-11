@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke tests">
+    <parameter name="petId" value="123"/>
+    <test name="Pet API">
+        <classes>
+            <class name="restassured.test.methods.pet.CreateMultiplePetsTest"/>
+            <class name="restassured.test.methods.pet.GetPetByIdTests"/>
+        </classes>
+    </test>
+</suite>
