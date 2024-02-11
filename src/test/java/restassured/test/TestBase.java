@@ -5,15 +5,17 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
+import org.aeonbits.owner.ConfigFactory;
 import org.testng.annotations.BeforeClass;
+import pl.bamnwa.properties.EnvironmentConfiguration;
 
 public class TestBase {
     @BeforeClass
     public void setUp(){
-        RestAssured.baseURI = "https://petstore.swagger.io";
-        RestAssured.basePath = "v2";
+        EnvironmentConfiguration environmentConfiguration = ConfigFactory.create(EnvironmentConfiguration.class);
+        RestAssured.baseURI = environmentConfiguration.baseUri();
+        RestAssured.basePath = environmentConfiguration.basePath();
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
         RestAssured.requestSpecification = new RequestSpecBuilder().setContentType(ContentType.JSON).build();
-        //RestAssured.responseSpecification = new ResponseSpecBuilder().expectStatusCode(200).build();
     }
 }
