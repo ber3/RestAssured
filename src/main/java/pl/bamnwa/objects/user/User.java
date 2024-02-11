@@ -6,12 +6,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User {
-    public Integer id;
-    public String username;
-    public String firstName;
-    public String lastName;
-    public String email;
-    public String password;
-    public String phone;
-    public Integer userStatus;
+    private Integer id;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
+    private String phone;
+    private Integer userStatus;
 }

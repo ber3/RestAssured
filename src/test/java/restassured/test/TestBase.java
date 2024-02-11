@@ -6,12 +6,12 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import org.aeonbits.owner.ConfigFactory;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import pl.bamnwa.properties.EnvironmentConfiguration;
 
 public class TestBase {
-    @BeforeClass
-    public void setUp(){
+    @BeforeSuite
+    public void setUpConfiguration(){
         EnvironmentConfiguration environmentConfiguration = ConfigFactory.create(EnvironmentConfiguration.class);
         RestAssured.baseURI = environmentConfiguration.baseUri();
         RestAssured.basePath = environmentConfiguration.basePath();
